@@ -10,7 +10,16 @@ func GetRandomWord(fileName string) ([]string, error) {
     if err != nil {
         return nil, err
     }
-	words := strings.Split(string(data), "\n")
+
+    lines := strings.Split(string(data), "\n")
+    var words []string
+
+    for _, line := range lines {
+        trimmedLine := strings.TrimSpace(line)
+        if trimmedLine != "" {
+            words = append(words, trimmedLine)
+        }
+    }
 
     return words, nil
 }
