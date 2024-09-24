@@ -3,6 +3,7 @@ package hangman
 import (
     "os"
 	"strings"
+    "fmt"
 )
 
 func GetRandomWord(fileName string) ([]string, error) {
@@ -22,4 +23,10 @@ func GetRandomWord(fileName string) ([]string, error) {
     }
 
     return words, nil
+}
+func AskForLetter() {
+    fmt.Printf("words %s letter : ", strings.Join(blanks, ""))
+    var input string
+    fmt.Println(&input)
+    fmt.Println(input)
 }
