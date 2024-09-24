@@ -3,7 +3,6 @@ package main
 import (
 	"Hangman/choosewords"
 	"fmt"
-	"math/rand"
 )
 
 func main() {
@@ -17,9 +16,6 @@ func main() {
 		return
 	}
 
-	// Choisir un mot aléatoire
-	randomIndex := rand.Intn(len(wordList))
-	chosenWord := wordList[randomIndex]
-	fmt.Println("Mot choisi :", chosenWord)
+	Hangman.ChooseRandomWord(wordList)
 }
 
