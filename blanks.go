@@ -1,4 +1,4 @@
-package hangman
+package Hangman
 
 import (
 	"strings"
@@ -9,5 +9,5 @@ func Blankword(chosenWord string) string {
 	for range chosenWord {
 		blanks = append(blanks, "_")
 	}
-return (strings.Join(blanks, " "))
+	return (strings.Join(blanks, " "))
 }
