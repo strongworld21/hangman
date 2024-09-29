@@ -18,4 +18,7 @@ func Finalworld() {
 	chosenWord := ChooseRandomWord(wordList)
 	blanks := Blankword(chosenWord)
 	fmt.Println(blanks)
+
+	letter := ProposeLetter()
+	fmt.Println(letter)
 }
