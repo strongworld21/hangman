@@ -1,24 +1,23 @@
 package Hangman
 
 import (
-	"fmt"
+    "fmt"
 )
 
+// Fonction pour lancer la partie de hangman
 func Finalworld() {
-	// Choisir la difficulté
-	fileName := ChooseDifficulty()
+    fileName := ChooseDifficulty()
 
-	// Lire les mots du fichier avec gestion d'erreur
-	wordList, err := GetRandomWord(fileName)
-	if err != nil {
-		fmt.Println("Erreur lors du chargement des mots :", err)
-		return
-	}
+    wordList, err := GetRandomWord(fileName)
+    if err != nil {
+        fmt.Println("Erreur lors du chargement des mots :", err)
+        return
+    }
 
-	chosenWord := ChooseRandomWord(wordList)
-	blanks := Blankword(chosenWord)
-	fmt.Println(blanks)
+    chosenWord := ChooseRandomWord(wordList)
 
-	letter := ProposeLetter()
-	fmt.Println(letter)
+    blanks := Blankword(chosenWord)
+    fmt.Println("Mot à deviner : ", blanks)
+
+    PlayGame(chosenWord, blanks)
 }
