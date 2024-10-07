@@ -5,7 +5,6 @@ import (
 	"strings"
 )
 
-// Fonction pour lire les mots d'un fichier et retourner une erreur si nécessaire
 func GetRandomWord(fileName string) ([]string, error) {
 	data, err := os.ReadFile(fileName)
 	if err != nil {
