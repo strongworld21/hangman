@@ -21,7 +21,7 @@ func PlayGame(chosenWord, blanks string) {
             fmt.Println("Mauvaise lettre.")
         }
 
-        if strings.Join(strings.Fields(blanks), "") == chosenWord {
+        if strings.ReplaceAll(blanks, " ", "") == chosenWord {
             fmt.Println("Félicitations ! Vous avez deviné le mot :", chosenWord)
             break
         }
