@@ -19,6 +19,7 @@ func PlayGame(chosenWord, blanks string) {
             errors ++
             PrintHangman(errors)
             fmt.Printf("Mauvaise lettre. Il te restes %d tentative(s) ! \n", chances-errors)
+            fmt.Println("Mot actuel : ", blanks)
         } else {
             blanks = UpdateBlanks(chosenWord, blanks, letter) 
             fmt.Println("Mot actuel : ", blanks)
@@ -27,6 +28,7 @@ func PlayGame(chosenWord, blanks string) {
 
         if strings.ReplaceAll(blanks, " ", "") == chosenWord {
             fmt.Println("Félicitations ! Vous avez deviné le mot :", chosenWord)
+            fmt.Printf("Il te restait %d tentative(s) ! \n", chances-errors)
             break
         }
         if errors == chances {
