@@ -17,6 +17,7 @@ func PlayGame(chosenWord, blanks string) {
 
         if !strings.Contains(chosenWord, letter) {
             errors ++
+            PrintHangman(errors)
             fmt.Printf("Mauvaise lettre. Il te restes %d tentative(s) ! \n", chances-errors)
         } else {
             blanks = UpdateBlanks(chosenWord, blanks, letter) 
@@ -29,7 +30,8 @@ func PlayGame(chosenWord, blanks string) {
             break
         }
         if errors == chances {
-            fmt.Println("Tu as perdu !")
+            fmt.Println("Tu as perdu ! Le mot était :", chosenWord)
+            PrintHangman(errors)
             break
         }
     }
