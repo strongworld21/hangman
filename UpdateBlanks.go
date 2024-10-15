@@ -4,6 +4,7 @@ import (
     "strings"
 )
 
+// Fonction pour mettre à jour les espaces vides avec les lettres trouvées
 func UpdateBlanks(chosenWord, blanks, letter string) string {
     updatedBlanks := strings.Fields(blanks) 
 
