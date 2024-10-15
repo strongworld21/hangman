@@ -27,7 +27,6 @@ func PlayGame(chosenWord, blanks string) {
 
 		if strings.ReplaceAll(blanks, " ", "") == chosenWord {
 			fmt.Println("Félicitations ! Vous avez deviné le mot :", chosenWord)
-			fmt.Printf("Il te restait %d tentative(s) ! \n", chances-errors)
 			break
 		}
 		if errors == chances {
