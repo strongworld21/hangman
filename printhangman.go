@@ -2,19 +2,18 @@ package Hangman
 
 import "fmt"
 
-
 func PrintHangman(errors int) {
-    hangman := []string{
-        ``,
-		    `
+	hangman := []string{
+		``,
+		`
 
 
 
         
 
 
-            =========`,	
-        `
+            =========`,
+		`
 
               |
               |
@@ -22,7 +21,7 @@ func PrintHangman(errors int) {
               |
               |
             =========`,
-        `
+		`
           +---+
               |
               |
@@ -30,31 +29,31 @@ func PrintHangman(errors int) {
               |
               |
             =========`,
-        `
-          +---+
-          |   |
-              |
-              |
-              |
-              |
-            =========`,
-        `
+		`
           +---+
           |   |
-          O   |
+              |
               |
               |
               |
             =========`,
-        `
+		`
           +---+
           |   |
           O   |
+              |
+              |
+              |
+            =========`,
+		`
+          +---+
+          |   |
+          O   |
           |   |
               |
               |
             =========`,
-        `
+		`
           +---+
           |   |
           O   |
@@ -62,7 +61,7 @@ func PrintHangman(errors int) {
               |
               |
             =========`,
-        `
+		`
           +---+
           |   |
           O   |
@@ -70,7 +69,7 @@ func PrintHangman(errors int) {
               |
               |
             =========`,
-        `
+		`
           +---+
           |   |
           O   |
@@ -78,7 +77,7 @@ func PrintHangman(errors int) {
          /    |
               |
             =========`,
-        `
+		`
           +---+
           |   |
           O   |
@@ -86,9 +85,9 @@ func PrintHangman(errors int) {
          / \  |
               |
             =========`,
-    }
+	}
 
-    if errors >= 0 && errors < len(hangman) {
-        fmt.Println(hangman[errors])
-    }
+	if errors >= 0 && errors < len(hangman) {
+		fmt.Println(hangman[errors])
+	}
 }

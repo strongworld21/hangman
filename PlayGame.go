@@ -1,8 +1,8 @@
 package Hangman
 
 import (
-    "fmt"
-    "strings"
+	"fmt"
+	"strings"
 )
 
 func PlayGame(chosenWord, blanks string) {
@@ -11,7 +11,7 @@ func PlayGame(chosenWord, blanks string) {
 	guessedLetters := make(map[string]bool)
 	for {
 		letter := ProposeLetter(guessedLetters)
-		guessedLetters[letter] = true 
+		guessedLetters[letter] = true
 		fmt.Println("Lettre proposée :", letter)
 
 		if !strings.Contains(chosenWord, letter) {
@@ -20,7 +20,7 @@ func PlayGame(chosenWord, blanks string) {
 			fmt.Printf("Mauvaise lettre. Il te reste %d tentative(s) ! \n", chances-errors)
 			fmt.Println("Mot actuel : ", blanks)
 		} else {
-			blanks = UpdateBlanks(chosenWord, blanks, letter) 
+			blanks = UpdateBlanks(chosenWord, blanks, letter)
 			fmt.Println("Mot actuel : ", blanks)
 			fmt.Println("Bonne lettre !")
 		}
@@ -37,4 +37,3 @@ func PlayGame(chosenWord, blanks string) {
 		}
 	}
 }
-

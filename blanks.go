@@ -4,7 +4,7 @@ import (
 	"strings"
 )
 
-func Blankword(chosenWord string) string {
+func BlankWord(chosenWord string) string {
 	blanks := []string{}
 	for range chosenWord {
 		blanks = append(blanks, "_")
