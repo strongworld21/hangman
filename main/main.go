@@ -5,20 +5,25 @@ import (
 	"fmt"
 )
 
-// Fonction pour lancer la partie de hangman
 func main() {
-    fileName := Hangman.ChooseDifficulty()
+	fileName, level := Hangman.ChooseDifficulty()
 
-    wordList, err := Hangman.GetRandomWord(fileName)
-    if err != nil {
-        fmt.Println("Erreur lors du chargement des mots :", err)
-        return
-    }
+	wordList, err := Hangman.GetRandomWord(fileName)
+	if err != nil {
+		fmt.Println("Erreur lors du chargement des mots :", err)
+		return
+	}
 
-    chosenWord := Hangman.ChooseRandomWord(wordList)
+	chosenWord := Hangman.ChooseRandomWord(wordList)
 
-    blanks := Hangman.Blankword(chosenWord)
-    fmt.Println("Mot à deviner : ", blanks)
+	var blanks string
+	if level == "facile" {
+		blanks = Hangman.LettersRevealed(chosenWord)
+	} else {
+		blanks = Hangman.BlankWord(chosenWord)
+	}
 
-    Hangman.PlayGame(chosenWord, blanks)
+	fmt.Println("Mot à deviner : ", blanks)
+
+	Hangman.PlayGame(chosenWord, blanks)
 }
