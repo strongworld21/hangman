@@ -1,7 +1,7 @@
 package main
 
 import (
-	"Hangman"
+	"github.com/strongworld21/hangman"
 	"fmt"
 )
 
